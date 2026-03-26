@@ -1,0 +1,25 @@
+@import 'tailwindcss';
+
+/* Class-based dark mode for Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* DentaVita — soft steel-blue palette, easy on the eyes */
+@theme {
+  --color-primary: #2B82A6;
+  --color-primary-dark: #1A6585;
+  --color-secondary: #5BAACC;
+  --color-secondary-dark: #3F8FAD;
+  --color-accent: #EBF5FB;
+  --color-accent-dark: #9FCCDF;
+}
+
+/* Keep anchor targets visible under the fixed navbar. */
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
