@@ -1,10 +1,15 @@
 'use client';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import MoonIcon from '@/icons/MoonIcon';
 import SunIcon from '@/icons/SunIcon';
 
 const ThemeToggle = () => {
-  const [isDark, setIsDark] = useState(() => localStorage.getItem('theme') === 'dark');
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIsDark(localStorage.getItem('theme') === 'dark');
+  }, []);
 
   const toggle = () => {
     setIsDark(v => {
