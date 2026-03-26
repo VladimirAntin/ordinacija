@@ -6,8 +6,6 @@ import CalendarIcon from '@/icons/CalendarIcon';
 import ArrowIcon from '@/icons/ArrowIcon';
 import LocationIcon from '@/icons/LocationIcon';
 import InstagramIcon from '@/icons/InstagramIcon';
-import LinkedInIcon from '@/icons/LinkedInIcon';
-// Dental icons from opensvg.dev (Lucide set)
 import SmileIcon from '@/icons/SmileIcon';
 import SparklesIcon from '@/icons/SparklesIcon';
 import StethoscopeIcon from '@/icons/StethoscopeIcon';
@@ -26,7 +24,6 @@ type IconName =
   | 'arrow'
   | 'location'
   | 'instagram'
-  | 'linkedin'
   | 'smile'
   | 'sparkles'
   | 'stethoscope'
@@ -46,7 +43,6 @@ const Icon = ({name, ...props}: {name: IconName} & Icon) => {
     arrow: ArrowIcon,
     location: LocationIcon,
     instagram: InstagramIcon,
-    linkedin: LinkedInIcon,
     smile: SmileIcon,
     sparkles: SparklesIcon,
     stethoscope: StethoscopeIcon,
