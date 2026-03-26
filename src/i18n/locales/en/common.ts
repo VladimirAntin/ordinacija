@@ -230,6 +230,61 @@ const common = {
   'Izazov': 'Challenge',
   'Rešenje': 'Solution',
   'Rezultati': 'Results',
+  'Nazad na početnu': 'Back to home',
+  'Stvarni rezultati naših pacijenata. Svaki slučaj uključuje pristup tretmanu, vremenski okvir i ishod.':
+    'Real results from our patients. Each case study includes the treatment approach, timeline and outcome.',
+  'Svi slučajevi objavljeni uz saglasnost pacijenta': 'All cases published with patient consent',
+  'Fotografije se objavljuju isključivo uz pisanu saglasnost pacijenta. Identitet pacijenta ostaje strogo poverljiv. Kontaktirajte nas za više informacija o specifičnom tretmanu.':
+    'Photos are published exclusively with written patient consent. Patient identity remains strictly confidential. Contact us for more information about any specific treatment.',
+  'Zainteresovani ste za sličan tretman?': 'Interested in a similar treatment?',
+
+  // ── Duration ─────────────────────────────────────────────────
+  '3 nedelje': '3 weeks',
+  '4 meseca': '4 months',
+  '18 meseci': '18 months',
+  '2 nedelje': '2 weeks',
+  '3 meseca': '3 months',
+
+  // ── Case study problems ───────────────────────────────────────
+  'Pacijentica je bila nezadovoljna diskoloracijom i oblikom prednjih zuba usled godina konzumiranja kafe i čaja.':
+    'The patient was dissatisfied with the discolouration and shape of her front teeth due to years of coffee and tea consumption.',
+  'Pacijent je izgubio gornji kutnjak pre godinu dana i imao problema sa žvakanjem hrane sa te strane.':
+    'The patient had lost an upper molar a year ago and had difficulty chewing on that side.',
+  'Pacijent imao zbijene prednje zube i dubok zalogaj koji je uzrokovao neravnomerno trošenje gleđi.':
+    'The patient had crowded front teeth and a deep bite causing uneven enamel wear.',
+  'Stare metalne krunice davale su siv ton desni i bile vidljivo zastarele estetski.':
+    'The old metal crowns gave the gums a grey tint and were visibly outdated aesthetically.',
+  'Pacijent imao uznapredovali parodontitis sa gubitkom koštanog tkiva na više zuba i povlačenjem desni.':
+    'The patient had advanced periodontitis with bone tissue loss on multiple teeth and gum recession.',
+
+  // ── Case study solutions ──────────────────────────────────────
+  'Sproveli smo Zoom izbeljivanje u ordinaciji praćeno kućnim protokolom. Nakon stabilizacije boje, ugradili smo četiri keramička faseta.':
+    'We performed in-office Zoom whitening followed by a home protocol. After colour stabilisation, we placed four ceramic veneers.',
+  'Postavili smo titanijumski implantat i sačekali period oseointegracije od 3 meseca. Potom smo ugradili finalnu keramičku krunicu.':
+    'We placed a titanium implant and waited for a 3-month osseointegration period. We then fitted the final ceramic crown.',
+  'Primenili smo keramičke estetske bravice i seriju graduiranih lukova za postepenu korekciju pozicije zuba.':
+    'We applied ceramic aesthetic braces and a series of graduated archwires for gradual correction of tooth position.',
+  'Uklonili smo stare krunice i izradili tročlani cirkonijumski most i dve pojedinačne cirkonijumske krunice uz digitalno uzimanje otiska.':
+    'We removed the old crowns and fabricated a three-unit zirconia bridge and two individual zirconia crowns with a digital impression.',
+  'Sproveli smo potpunu parodontološku terapiju u četiri kvadranta sa subgingivalnim čišćenjem i lokalnom antibiotskom terapijom.':
+    'We carried out complete periodontal therapy in four quadrants with subgingival cleaning and local antibiotic therapy.',
+
+  // ── Case study results ────────────────────────────────────────
+  'Nijansa boje poboljšana za 8 tona': 'Shade improved by 8 tones',
+  'Keramički faseti sa garancijom od 10 godina': 'Ceramic veneers with a 10-year guarantee',
+  'Potpuno prirodan izgled i osećaj': 'Completely natural look and feel',
+  'Trajno rešenje bez brušenja susednih zuba': 'Permanent solution without grinding adjacent teeth',
+  'Krunica identična prirodnom zubu': 'Crown identical to a natural tooth',
+  'Potpuna funkcionalnost žvakanja obnovljena': 'Full chewing function restored',
+  'Pravilan zalogaj i raspored zuba': 'Correct bite and tooth alignment',
+  'Vidljivo poboljšanje estetike osmeha': 'Visible improvement in smile aesthetics',
+  'Smanjen rizik od trošenja gleđi': 'Reduced risk of enamel wear',
+  'Prirodno bela i prozirna estetika': 'Naturally white and translucent aesthetics',
+  'Bez metalnih komponenti': 'No metal components',
+  'Digitalni otisak za precizno pasovanje': 'Digital impression for precise fitting',
+  'Zaustavljen napredak bolesti': 'Disease progression halted',
+  'Smanjene dubine parodontalnih džepova': 'Reduced periodontal pocket depths',
+  'Stabilizacija mobilnih zuba': 'Stabilisation of mobile teeth',
 };
 
 export default common;
