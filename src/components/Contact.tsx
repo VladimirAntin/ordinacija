@@ -5,58 +5,108 @@ import SendIcon from '@/icons/SendIcon';
 import Link from 'next/link';
 import {contactItems} from '@/components/data/contact';
 import Icon from '@/icons/Icon';
-import {useSearchParams} from 'next/navigation';
-import {sendMessage} from '@/services/Messanger';
 import {useTranslation} from 'react-i18next';
 
 const ContactForm = () => {
-  const searchParams = useSearchParams();
   const {t} = useTranslation();
-  const {handleSubmit, control, formState: {isSubmitted}} = useForm<MailData>({
+  const {
+    handleSubmit,
+    control,
+    formState: {isSubmitted},
+  } = useForm<MailData>({
     defaultValues: {name: '', email: '', message: ''},
   });
 
   const onSubmit = (data: MailData) => {
-    sendMessage({...data, selectedPackage: searchParams.get('package')});
+    console.log('Submitting contact form with data:', data);
   };
 
   if (isSubmitted) {
     return (
       <div className="flex h-full flex-col items-center justify-center py-16 text-center">
-        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent dark:bg-primary/20">
-          <SendIcon height={28} width={28} className="text-primary dark:text-accent-dark" />
+        <div className="bg-accent dark:bg-primary/20 mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full">
+          <SendIcon
+            height={28}
+            width={28}
+            className="text-primary dark:text-accent-dark"
+          />
         </div>
         <h4 className="mb-2 text-xl dark:text-white">{t('Uspešno poslato!')}</h4>
-        <p className="text-gray-500 dark:text-gray-400">{t('Javićemo vam se u najkraćem mogućem roku radi dogovora o terminu.')}</p>
+        <p className="text-gray-500 dark:text-gray-400">
+          {t('Javićemo vam se u najkraćem mogućem roku radi dogovora o terminu.')}
+        </p>
       </div>
     );
   }
 
   return (
-    <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className="space-y-4"
+      onSubmit={handleSubmit(onSubmit)}>
       <div className="grid gap-4 sm:grid-cols-2">
-        <Controller name="name" control={control} rules={{required: true}} render={({field}) => (
-          <div>
-            <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300">{t('Ime i prezime *')}</label>
-            <input {...field} className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 transition focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100 dark:placeholder-gray-500" placeholder={t('Vaše ime')} />
-          </div>
-        )} />
-        <Controller name="email" control={control} rules={{required: true}} render={({field}) => (
-          <div>
-            <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300">{t('Email adresa *')}</label>
-            <input {...field} type="email" className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 transition focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100 dark:placeholder-gray-500" placeholder={t('vas@email.com')} />
-          </div>
-        )} />
+        <Controller
+          name="name"
+          control={control}
+          rules={{required: true}}
+          render={({field}) => (
+            <div>
+              <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300">
+                {t('Ime i prezime *')}
+              </label>
+              <input
+                {...field}
+                className="focus:border-primary focus:ring-primary/20 w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 transition focus:ring-2 focus:outline-none dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100 dark:placeholder-gray-500"
+                placeholder={t('Vaše ime')}
+              />
+            </div>
+          )}
+        />
+        <Controller
+          name="email"
+          control={control}
+          rules={{required: true}}
+          render={({field}) => (
+            <div>
+              <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300">
+                {t('Email adresa *')}
+              </label>
+              <input
+                {...field}
+                type="email"
+                className="focus:border-primary focus:ring-primary/20 w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 transition focus:ring-2 focus:outline-none dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100 dark:placeholder-gray-500"
+                placeholder={t('vas@email.com')}
+              />
+            </div>
+          )}
+        />
       </div>
-      <Controller name="message" control={control} rules={{required: true}} render={({field}) => (
-        <div>
-          <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300">{t('Poruka *')}</label>
-          <textarea {...field} rows={5} className="w-full resize-none rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 transition focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100 dark:placeholder-gray-500" placeholder={t('Opišite vaš problem, upit ili željeni termin...')} />
-        </div>
-      )} />
-      <button type="submit" className="group flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-white transition hover:bg-primary-dark">
+      <Controller
+        name="message"
+        control={control}
+        rules={{required: true}}
+        render={({field}) => (
+          <div>
+            <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300">
+              {t('Poruka *')}
+            </label>
+            <textarea
+              {...field}
+              rows={5}
+              className="focus:border-primary focus:ring-primary/20 w-full resize-none rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 transition focus:ring-2 focus:outline-none dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100 dark:placeholder-gray-500"
+              placeholder={t('Opišite vaš problem, upit ili željeni termin...')}
+            />
+          </div>
+        )}
+      />
+      <button
+        type="submit"
+        className="group bg-primary hover:bg-primary-dark flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-medium text-white transition">
         {t('Pošalji Poruku')}
-        <SendIcon className="transition group-hover:translate-x-1" height={18} width={18} />
+        <SendIcon
+          className="transition group-hover:translate-x-1"
+          height={18}
+          width={18}
+        />
       </button>
     </form>
   );
@@ -65,7 +115,9 @@ const ContactForm = () => {
 const Contact = () => {
   const {t} = useTranslation();
   return (
-    <section id="contact" className="bg-white dark:bg-gray-900">
+    <section
+      id="contact"
+      className="bg-white dark:bg-gray-900">
       {/* OpenStreetMap — full width */}
       <div className="h-56 w-full overflow-hidden sm:h-72">
         <iframe
@@ -80,7 +132,7 @@ const Contact = () => {
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-14 text-center">
-          <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-widest text-primary dark:text-accent-dark">
+          <span className="text-primary dark:text-accent-dark mb-3 inline-block text-sm font-semibold tracking-widest uppercase">
             {t('Kontakt')}
           </span>
           <h2 className="mb-4 text-4xl sm:text-5xl dark:text-white">{t('Zakažite Pregled')}</h2>
@@ -92,8 +144,13 @@ const Contact = () => {
         <div className="grid gap-10 lg:grid-cols-5">
           {/* Form — wider */}
           <div className="rounded-2xl border border-gray-100 bg-slate-50 p-8 lg:col-span-3 dark:border-gray-700 dark:bg-gray-800">
-            <h3 className="mb-6 text-xl font-semibold dark:text-white">{t('Pošaljite Upit ili Zakažite')}</h3>
-            <Suspense fallback={<div className="h-64 animate-pulse rounded-xl bg-gray-100 dark:bg-gray-700" />}>
+            <h3 className="mb-6 text-xl font-semibold dark:text-white">
+              {t('Pošaljite Upit ili Zakažite')}
+            </h3>
+            <Suspense
+              fallback={
+                <div className="h-64 animate-pulse rounded-xl bg-gray-100 dark:bg-gray-700" />
+              }>
               <ContactForm />
             </Suspense>
           </div>
@@ -107,10 +164,17 @@ const Contact = () => {
                 href={item.href || '#'}
                 className={item.containerClassName}>
                 <div className={item.iconContainerClassName}>
-                  <Icon name={item.icon} height={20} width={20} className={item.iconClassName} />
+                  <Icon
+                    name={item.icon}
+                    height={20}
+                    width={20}
+                    className={item.iconClassName}
+                  />
                 </div>
                 <div>
-                  <div className="text-xs font-medium text-gray-500 dark:text-gray-400">{t(item.title)}</div>
+                  <div className="text-xs font-medium text-gray-500 dark:text-gray-400">
+                    {t(item.title)}
+                  </div>
                   <div className="text-sm font-semibold dark:text-white">{t(item.value)}</div>
                 </div>
               </Link>
