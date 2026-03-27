@@ -5,12 +5,12 @@
 
 /* DentaVita — soft steel-blue palette, easy on the eyes */
 @theme {
-  --color-primary: #2B82A6;
-  --color-primary-dark: #1A6585;
-  --color-secondary: #5BAACC;
-  --color-secondary-dark: #3F8FAD;
-  --color-accent: #EBF5FB;
-  --color-accent-dark: #9FCCDF;
+  --color-primary: #2b82a6;
+  --color-primary-dark: #1a6585;
+  --color-secondary: #5baacc;
+  --color-secondary-dark: #3f8fad;
+  --color-accent: #ebf5fb;
+  --color-accent-dark: #9fccdf;
 }
 
 /* Keep anchor targets visible under the fixed navbar. */

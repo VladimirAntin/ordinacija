@@ -8,4 +8,3 @@ type Package = {
   highlighted?: boolean;
   iconName?: IconName;
 };
-

@@ -12,7 +12,8 @@ const servicesItems: ServiceItem[] = [
     textClassName: 'text-primary dark:text-accent-dark',
     containerClassName: 'bg-accent dark:bg-teal-950/30',
     iconName: 'sparkles',
-    iconContainerClassName: 'bg-white dark:bg-gray-800 border border-primary/20 dark:border-primary/40',
+    iconContainerClassName:
+      'bg-white dark:bg-gray-800 border border-primary/20 dark:border-primary/40',
   },
   {
     title: 'Oralna Hirurgija & Implantati',
@@ -27,7 +28,8 @@ const servicesItems: ServiceItem[] = [
     textClassName: 'text-secondary dark:text-sky-400',
     containerClassName: 'bg-sky-50 dark:bg-sky-950/30',
     iconName: 'layers',
-    iconContainerClassName: 'bg-white dark:bg-gray-800 border border-secondary/30 dark:border-sky-700',
+    iconContainerClassName:
+      'bg-white dark:bg-gray-800 border border-secondary/30 dark:border-sky-700',
   },
   {
     title: 'Opšta & Dečja Stomatologija',
@@ -42,7 +44,8 @@ const servicesItems: ServiceItem[] = [
     textClassName: 'text-violet-600 dark:text-violet-400',
     containerClassName: 'bg-violet-50 dark:bg-violet-950/30',
     iconName: 'baby',
-    iconContainerClassName: 'bg-white dark:bg-gray-800 border border-violet-200 dark:border-violet-800',
+    iconContainerClassName:
+      'bg-white dark:bg-gray-800 border border-violet-200 dark:border-violet-800',
   },
   {
     title: 'Ortodoncija',
@@ -72,7 +75,8 @@ const servicesItems: ServiceItem[] = [
     textClassName: 'text-emerald-600 dark:text-emerald-400',
     containerClassName: 'bg-emerald-50 dark:bg-emerald-950/30',
     iconName: 'shieldCheck',
-    iconContainerClassName: 'bg-white dark:bg-gray-800 border border-emerald-200 dark:border-emerald-800',
+    iconContainerClassName:
+      'bg-white dark:bg-gray-800 border border-emerald-200 dark:border-emerald-800',
   },
   {
     title: 'Protetika & Mostovi',
@@ -87,7 +91,8 @@ const servicesItems: ServiceItem[] = [
     textClassName: 'text-amber-600 dark:text-amber-400',
     containerClassName: 'bg-amber-50 dark:bg-amber-950/30',
     iconName: 'stethoscope',
-    iconContainerClassName: 'bg-white dark:bg-gray-800 border border-amber-200 dark:border-amber-800',
+    iconContainerClassName:
+      'bg-white dark:bg-gray-800 border border-amber-200 dark:border-amber-800',
   },
 ];
 

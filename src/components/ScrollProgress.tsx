@@ -15,7 +15,7 @@ export default function ScrollProgress() {
     });
 
     observer.observe(nav);
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setNavHeight(nav.getBoundingClientRect().height);
 
     return () => observer.disconnect();

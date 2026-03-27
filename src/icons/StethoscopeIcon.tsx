@@ -3,23 +3,26 @@ import {FC, memo} from 'react';
 // Source: opensvg.dev — Lucide / stethoscope
 const StethoscopeIcon: FC<Icon> = ({width = 24, height = 24, className}) => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
+    xmlns={"http://www.w3.org/2000/svg"}
     width={width}
     height={height}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    viewBox={"0 0 24 24"}
+    fill={"none"}
+    stroke={"currentColor"}
+    strokeWidth={"2"}
+    strokeLinecap={"round"}
+    strokeLinejoin={"round"}
     className={className}>
-    <path d="M11 2v2" />
-    <path d="M5 2v2" />
-    <path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1" />
-    <path d="M8 15a6 6 0 0 0 12 0v-3" />
-    <circle cx="20" cy="10" r="2" />
+    <path d={"M11 2v2"} />
+    <path d={"M5 2v2"} />
+    <path d={"M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"} />
+    <path d={"M8 15a6 6 0 0 0 12 0v-3"} />
+    <circle
+      cx={"20"}
+      cy={"10"}
+      r={"2"}
+    />
   </svg>
 );
 
 export default memo(StethoscopeIcon);
-

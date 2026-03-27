@@ -7,8 +7,11 @@ const ThemeToggle = () => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setIsDark(localStorage.getItem('theme') === 'dark');
+    setIsDark(() => {
+      const isDarkMode = localStorage.getItem('theme') === 'dark';
+      document.documentElement.classList.toggle('dark', isDarkMode);
+      return isDarkMode;
+    });
   }, []);
 
   const toggle = () => {
@@ -27,17 +30,19 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggle}
-      aria-label="Toggle dark mode"
-      className="flex items-center justify-center rounded-full p-1 transition-colors duration-200 hover:cursor-pointer hover:bg-white/10">
+      aria-label={'Toggle dark mode'}
+      className={
+        'flex items-center justify-center rounded-full p-1 transition-colors duration-200 hover:cursor-pointer hover:bg-white/10'
+      }>
       {isDark ? (
         <MoonIcon
-          className="fill-white"
+          className={'fill-white'}
           width={22}
           height={22}
         />
       ) : (
         <SunIcon
-          className="fill-white"
+          className={'fill-white'}
           width={22}
           height={22}
         />

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 const About = () => {
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-900">
+    <main className={"min-h-screen bg-white dark:bg-gray-900"}>
       <AboutSection />
       <Team />
       <Contact />

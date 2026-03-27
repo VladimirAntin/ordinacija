@@ -11,16 +11,16 @@ const Packages = () => {
   const {t} = useTranslation();
   return (
     <section
-      id="packages"
-      className="bg-slate-50 py-24 dark:bg-gray-900">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      id={"packages"}
+      className={"bg-slate-50 py-24 dark:bg-gray-900"}>
+      <div className={"mx-auto max-w-5xl px-4 sm:px-6 lg:px-8"}>
         {/* Header */}
-        <div className="mb-14 text-center">
-          <span className="text-primary dark:text-accent-dark mb-3 inline-block text-sm font-semibold tracking-widest uppercase">
+        <div className={"mb-14 text-center"}>
+          <span className={"text-primary dark:text-accent-dark mb-3 inline-block text-sm font-semibold tracking-widest uppercase"}>
             {t('Tretmani')}
           </span>
-          <h2 className="mb-4 text-4xl sm:text-5xl dark:text-white">{t('Paketi & Cene')}</h2>
-          <p className="mx-auto max-w-2xl text-lg text-gray-500 dark:text-gray-400">
+          <h2 className={"mb-4 text-4xl sm:text-5xl dark:text-white"}>{t('Paketi & Cene')}</h2>
+          <p className={"mx-auto max-w-2xl text-lg text-gray-500 dark:text-gray-400"}>
             {t(
               'Transparentne cene bez skrivenih troškova — izaberi paket koji odgovara vašim potrebama',
             )}
@@ -28,7 +28,7 @@ const Packages = () => {
         </div>
 
         {/* Horizontal rows */}
-        <div className="space-y-4">
+        <div className={"space-y-4"}>
           {packages.map((pkg, index) => (
             <Link
               key={index}
@@ -41,15 +41,15 @@ const Packages = () => {
               )}>
               {/* Badge */}
               {pkg.priceNote && (
-                <div className="absolute -top-3 right-6">
-                  <span className="rounded-full bg-amber-400 px-3 py-0.5 text-xs font-bold text-amber-900 shadow-sm">
-                    ⭐ {t(pkg.priceNote)}
+                <div className={"absolute -top-3 right-6"}>
+                  <span className={"rounded-full bg-amber-400 px-3 py-0.5 text-xs font-bold text-amber-900 shadow-sm"}>
+                    {"⭐ "}{t(pkg.priceNote)}
                   </span>
                 </div>
               )}
 
               {/* Icon + title */}
-              <div className="flex shrink-0 items-center gap-4 sm:w-52">
+              <div className={"flex shrink-0 items-center gap-4 sm:w-52"}>
                 {pkg.iconName && (
                   <div
                     className={cn('flex h-10 w-10 items-center justify-center rounded-xl', {
@@ -93,11 +93,11 @@ const Packages = () => {
               />
 
               {/* Features */}
-              <ul className="flex flex-1 flex-wrap gap-x-6 gap-y-1">
+              <ul className={"flex flex-1 flex-wrap gap-x-6 gap-y-1"}>
                 {pkg.features.slice(0, 4).map((f, i) => (
                   <li
                     key={i}
-                    className="flex items-center gap-1.5 text-xs">
+                    className={"flex items-center gap-1.5 text-xs"}>
                     <span
                       className={cn('h-1 w-1 rounded-full', {
                         'bg-accent-dark': pkg.highlighted,
@@ -116,7 +116,7 @@ const Packages = () => {
               </ul>
 
               {/* Price + CTA */}
-              <div className="flex shrink-0 items-center gap-4 sm:flex-col sm:items-end">
+              <div className={"flex shrink-0 items-center gap-4 sm:flex-col sm:items-end"}>
                 <span
                   className={cn('text-2xl font-light', {
                     'text-white': pkg.highlighted,
@@ -136,7 +136,7 @@ const Packages = () => {
                   <ArrowIcon
                     width={14}
                     height={14}
-                    className="rotate-90 transition-transform group-hover:translate-x-0.5"
+                    className={"rotate-90 transition-transform group-hover:translate-x-0.5"}
                   />
                 </div>
               </div>

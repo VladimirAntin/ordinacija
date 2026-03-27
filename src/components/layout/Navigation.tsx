@@ -31,7 +31,8 @@ const Languages = [
 ];
 
 const LangToggle = ({currentLang, mobile = false}: {currentLang: string; mobile?: boolean}) => (
-  <div className={cn('flex items-center overflow-hidden rounded-full border border-white/30 text-sm')}>
+  <div
+    className={cn('flex items-center overflow-hidden rounded-full border border-white/30 text-sm')}>
     {Languages.map(({code, Icon, label}) => (
       <button
         key={code}
@@ -44,7 +45,10 @@ const LangToggle = ({currentLang, mobile = false}: {currentLang: string; mobile?
             'flex-1': mobile,
           },
         )}>
-        <Icon width={16} height={16} />
+        <Icon
+          width={16}
+          height={16}
+        />
         {label}
       </button>
     ))}
@@ -52,7 +56,10 @@ const LangToggle = ({currentLang, mobile = false}: {currentLang: string; mobile?
 );
 
 const Navigation = () => {
-  const {t, i18n: {language}} = useTranslation();
+  const {
+    t,
+    i18n: {language},
+  } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('');
   const [mounted, setMounted] = useState(false);
@@ -62,7 +69,9 @@ const Navigation = () => {
 
   useEffect(() => {
     rafRef.current = requestAnimationFrame(() => setMounted(true));
-    return () => {if (rafRef.current) cancelAnimationFrame(rafRef.current);};
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
   }, []);
 
   useEffect(() => {
@@ -74,7 +83,10 @@ const Navigation = () => {
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      if (scrollY < 80) {setActiveSection(''); return;}
+      if (scrollY < 80) {
+        setActiveSection('');
+        return;
+      }
       let current = '';
       for (const s of sections) {
         if (s.el.offsetTop - window.innerHeight * 0.45 <= scrollY) current = s.id;
@@ -84,7 +96,10 @@ const Navigation = () => {
 
     window.addEventListener('scroll', handleScroll, {passive: true});
     handleScroll();
-    return () => {window.removeEventListener('scroll', handleScroll); setActiveSection('');};
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      setActiveSection('');
+    };
   }, [isHome]);
 
   const navLinkCls = (isActive: boolean) =>
@@ -106,18 +121,21 @@ const Navigation = () => {
   const currentLang = mounted ? language : 'sr';
 
   return (
-    <nav className="fixed top-0 right-0 left-0 z-50 bg-primary shadow-lg dark:bg-primary-dark">
-      <div className="mx-auto px-4">
-        <div className="flex h-16 flex-row items-center justify-between">
+    <nav className={"bg-primary dark:bg-primary-dark fixed top-0 right-0 left-0 z-50 shadow-lg"}>
+      <div className={"mx-auto px-4"}>
+        <div className={"flex h-16 flex-row items-center justify-between"}>
           <Link
-            href="/"
-            className="flex flex-row items-center gap-2 text-xl font-semibold text-white">
-            <LogoIcon height={32} width={32} />
-            <span>DentaVita</span>
+            href={"/"}
+            className={"flex flex-row items-center gap-2 text-xl font-semibold text-white"}>
+            <LogoIcon
+              height={32}
+              width={32}
+            />
+            <span>{"DentaVita"}</span>
           </Link>
 
           {/* Desktop */}
-          <div className="hidden items-center gap-1 md:flex">
+          <div className={"hidden items-center gap-1 md:flex"}>
             {homeLinks.map(item => (
               <Link
                 key={item.href}
@@ -130,7 +148,7 @@ const Navigation = () => {
               </Link>
             ))}
 
-            <div className="mx-2 h-4 w-px bg-white/20" />
+            <div className={"mx-2 h-4 w-px bg-white/20"} />
 
             {pageLinks.map(item => (
               <Link
@@ -141,11 +159,11 @@ const Navigation = () => {
               </Link>
             ))}
 
-            <div className="mx-2 h-4 w-px bg-white/20" />
+            <div className={"mx-2 h-4 w-px bg-white/20"} />
 
             <Link
-              href="/#contact"
-              className="rounded-full bg-white px-5 py-2 text-sm font-medium text-primary transition hover:bg-accent hover:text-primary-dark">
+              href={"/#contact"}
+              className={"text-primary hover:bg-accent hover:text-primary-dark rounded-full bg-white px-5 py-2 text-sm font-medium transition"}>
               {t('Zakažite Pregled')}
             </Link>
 
@@ -154,21 +172,31 @@ const Navigation = () => {
           </div>
 
           {/* Mobile toggle */}
-          <div className="flex items-center gap-2 md:hidden">
+          <div className={"flex items-center gap-2 md:hidden"}>
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-white"
-              aria-label="Toggle menu">
-              {isOpen ? <CloseIcon width={24} height={24} /> : <MenuIcon width={24} height={24} />}
+              className={"p-2 text-white"}
+              aria-label={"Toggle menu"}>
+              {isOpen ? (
+                <CloseIcon
+                  width={24}
+                  height={24}
+                />
+              ) : (
+                <MenuIcon
+                  width={24}
+                  height={24}
+                />
+              )}
             </button>
           </div>
         </div>
 
         {/* Mobile menu */}
         {isOpen && (
-          <div className="space-y-1 border-t border-white/10 bg-white py-4 md:hidden dark:bg-gray-900">
-            <p className="px-3 pb-1 text-[10px] tracking-widest text-gray-400 uppercase">
+          <div className={"space-y-1 border-t border-white/10 bg-white py-4 md:hidden dark:bg-gray-900"}>
+            <p className={"px-3 pb-1 text-[10px] tracking-widest text-gray-400 uppercase"}>
               {t('Na početnoj')}
             </p>
             {homeLinks.map(item => (
@@ -184,9 +212,9 @@ const Navigation = () => {
               </Link>
             ))}
 
-            <div className="my-3 border-t border-gray-100 dark:border-gray-800" />
+            <div className={"my-3 border-t border-gray-100 dark:border-gray-800"} />
 
-            <p className="px-3 pb-1 text-[10px] tracking-widest text-gray-400 uppercase">
+            <p className={"px-3 pb-1 text-[10px] tracking-widest text-gray-400 uppercase"}>
               {t('Stranice')}
             </p>
             {pageLinks.map(item => (
@@ -199,15 +227,18 @@ const Navigation = () => {
               </Link>
             ))}
 
-            <div className="my-3 border-t border-gray-100 dark:border-gray-800" />
+            <div className={"my-3 border-t border-gray-100 dark:border-gray-800"} />
 
-            <div className="px-1">
-              <LangToggle currentLang={currentLang} mobile />
+            <div className={"px-1"}>
+              <LangToggle
+                currentLang={currentLang}
+                mobile
+              />
             </div>
 
             <Link
-              href="/#contact"
-              className="block rounded-full bg-primary px-6 py-2.5 text-center text-sm font-medium text-white transition hover:bg-primary-dark"
+              href={"/#contact"}
+              className={"bg-primary hover:bg-primary-dark block rounded-full px-6 py-2.5 text-center text-sm font-medium text-white transition"}
               onClick={() => setIsOpen(false)}>
               {t('Zakažite Pregled')}
             </Link>

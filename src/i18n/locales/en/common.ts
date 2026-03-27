@@ -170,7 +170,7 @@ const common = {
   'Stomatološki Osmeh Dizajn': 'Dental Smile Design',
 
   // ── New services ─────────────────────────────────────────────
-  'Ortodoncija': 'Orthodontics',
+  Ortodoncija: 'Orthodontics',
   'Ispravite zube i zalogaj uz savremene ortodontske metode. Nudimo rešenja za sve uzraste — od dece do odraslih — sa naglaskom na estetiku i komfor.':
     'Correct your teeth and bite with modern orthodontic methods. We offer solutions for all ages — from children to adults — with a focus on aesthetics and comfort.',
   'Metalne i keramičke bravice': 'Metal and ceramic braces',
@@ -202,7 +202,7 @@ const common = {
   'Cirkonijumski Most & Krunice': 'Zirconia Bridge & Crowns',
   'Izrada tročlanog cirkonijumskog mosta u frontalnoj regiji uz zamenu starih metalnih krunica modernim estetskim radovima.':
     'Fabrication of a three-unit zirconia bridge in the frontal region along with replacement of old metal crowns with modern aesthetic restorations.',
-  'Cirkonijum': 'Zirconia',
+  Cirkonijum: 'Zirconia',
   'Digitalni Otisak': 'Digital Impression',
   'Keramička Glazura': 'Ceramic Glazing',
   'Parodontološka Sanacija': 'Periodontal Treatment',
@@ -212,7 +212,7 @@ const common = {
   'Parodontalni Monitoring': 'Periodontal Monitoring',
 
   // ── Team ────────────────────────────────────────────────────
-  'Tim': 'Team',
+  Tim: 'Team',
   'Naš Tim': 'Our Team',
   'Stručnjaci predani vašem zdravlju i osmehu': 'Specialists dedicated to your health and smile',
   'Specijalista Estetske Stomatologije': 'Aesthetic Dentistry Specialist',
@@ -227,9 +227,9 @@ const common = {
     'Orthodontist experienced in treating both children and adult patients. Certified Invisalign provider and Damon system expert.',
 
   // ── Gallery page ─────────────────────────────────────────────
-  'Izazov': 'Challenge',
-  'Rešenje': 'Solution',
-  'Rezultati': 'Results',
+  Izazov: 'Challenge',
+  Rešenje: 'Solution',
+  Rezultati: 'Results',
   'Nazad na početnu': 'Back to home',
   'Stvarni rezultati naših pacijenata. Svaki slučaj uključuje pristup tretmanu, vremenski okvir i ishod.':
     'Real results from our patients. Each case study includes the treatment approach, timeline and outcome.',
