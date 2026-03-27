@@ -16,24 +16,6 @@ import ScanIcon from '@/icons/ScanIcon';
 import BabyIcon from '@/icons/BabyIcon';
 import ZapIcon from '@/icons/ZapIcon';
 
-type IconName =
-  | 'mail'
-  | 'phone'
-  | 'send'
-  | 'calendar'
-  | 'arrow'
-  | 'location'
-  | 'instagram'
-  | 'smile'
-  | 'sparkles'
-  | 'stethoscope'
-  | 'layers'
-  | 'shieldCheck'
-  | 'microscope'
-  | 'scan'
-  | 'baby'
-  | 'zap';
-
 const Icon = ({name, ...props}: {name: IconName} & Icon) => {
   const icons: Record<IconName, FC<Icon>> = {
     mail: MailIcon,
